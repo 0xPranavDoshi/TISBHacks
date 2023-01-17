@@ -46,7 +46,7 @@ export default function Home() {
                     className='w-8 mx-3'
                   />
                 </span>
-                Febraury 4th
+                February 4th
               </h3>
               <a
                 target='_blank'
