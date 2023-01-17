@@ -4,7 +4,14 @@ const Navbar = () => {
     <div className='w-full h-[10vh] border-b border-white/[.13] border-solid flex justify-between items-center fixed z-20 bg-primary'>
       <img src='/logo.png' alt='Logo' className='ml-4 w-14 h-14' />
       <div className='flex items-center justify-center gap-8'>
-        <p className='text-white cursor-pointer'>Home</p>
+        <p
+          onClick={() => {
+            document.body.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          }}
+          className='text-white cursor-pointer'
+        >
+          Home
+        </p>
         <p
           onClick={() => {
             let element = document.getElementById('faqs')
