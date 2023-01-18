@@ -1,11 +1,24 @@
+import { useRouter } from 'next/router'
+
 /* eslint-disable @next/next/no-img-element */
 const Navbar = () => {
+  const router = useRouter()
+
   return (
     <div className='w-full h-[10vh] border-b border-white/[.13] border-solid flex justify-between items-center fixed z-20 bg-primary'>
-      <img src='/logo.png' alt='Logo' className='ml-4 w-14 h-14' />
+      <img
+        src='/logo.png'
+        alt='Logo'
+        className='ml-4 cursor-pointer w-14 h-14'
+        onClick={async () => {
+          router.pathname !== '/' && (await router.push('/'))
+          document.body.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }}
+      />
       <div className='flex items-center justify-center gap-8'>
         <p
-          onClick={() => {
+          onClick={async () => {
+            router.pathname !== '/' && (await router.push('/'))
             document.body.scrollIntoView({ behavior: 'smooth', block: 'start' })
           }}
           className='text-white cursor-pointer'
@@ -13,7 +26,8 @@ const Navbar = () => {
           Home
         </p>
         <p
-          onClick={() => {
+          onClick={async () => {
+            router.pathname !== '/' && (await router.push('/'))
             let element = document.getElementById('faqs')
             element?.scrollIntoView({ behavior: 'smooth', block: 'start' })
           }}
@@ -22,7 +36,8 @@ const Navbar = () => {
           FAQs
         </p>
         <p
-          onClick={() => {
+          onClick={async () => {
+            router.pathname !== '/' && (await router.push('/'))
             let element = document.getElementById('sponsors')
             element?.scrollIntoView({ behavior: 'smooth', block: 'start' })
           }}
@@ -30,6 +45,12 @@ const Navbar = () => {
         >
           Sponsors
         </p>
+        {/* <p
+          onClick={() => router.push('/blog')}
+          className='text-white cursor-pointer'
+        >
+          Blog
+        </p> */}
         <a
           target='_blank'
           rel='noreferrer'

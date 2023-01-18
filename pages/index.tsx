@@ -1,9 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Head from 'next/head'
-import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import Navbar from '@/components/Navbar'
-import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io'
 import { useState } from 'react'
 import Footer from '@/components/Footer'
 import FAQ, { FAQEnum, FAQProps } from '@/components/FAQ'
@@ -78,8 +76,33 @@ export default function Home() {
     {
       faqVal: FAQEnum.Q9,
       question: 'What is the Program/Timetable?',
-      answer:
-        'The schedule of events will be decided and notified to all participants shortly.',
+      answer: (
+        <>
+          <p>The schedule of events on February 4th are as follows:</p>
+          <br />
+          <p>
+            <b>2 PM</b> - Event begins.
+          </p>
+          <p>
+            <b>2-3 PM</b> - 3 side events occurring simultaneously carnivalesque
+            (Competitive coding, Gaming, Crisis event).
+          </p>
+          <p>
+            <b>3:15-3:30 PM</b> - Opening Ceremony (Guest Speaker, Introduction
+            of Event).
+          </p>
+          <p>
+            <b>3:30-5:30 PM</b> - Presentations with short 10 minute juice break
+            in the middle.
+          </p>
+          <p>
+            <b>5:30-6 PM</b> - Internal discussion to decide winners.
+          </p>
+          <p>
+            <b>6-6:15 PM</b> - Announcing winner and closing ceremony.
+          </p>
+        </>
+      ),
     },
     {
       faqVal: FAQEnum.Q10,
