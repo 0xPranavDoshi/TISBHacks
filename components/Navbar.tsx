@@ -21,7 +21,7 @@ const Navbar = () => {
             router.pathname !== '/' && (await router.push('/'))
             document.body.scrollIntoView({ behavior: 'smooth', block: 'start' })
           }}
-          className='text-white cursor-pointer'
+          className='hidden text-white cursor-pointer sm:block'
         >
           Home
         </p>
@@ -31,7 +31,7 @@ const Navbar = () => {
             let element = document.getElementById('faqs')
             element?.scrollIntoView({ behavior: 'smooth', block: 'start' })
           }}
-          className='text-white cursor-pointer'
+          className='hidden text-white cursor-pointer sm:block'
         >
           FAQs
         </p>
@@ -41,7 +41,7 @@ const Navbar = () => {
             let element = document.getElementById('sponsors')
             element?.scrollIntoView({ behavior: 'smooth', block: 'start' })
           }}
-          className='text-white cursor-pointer'
+          className='hidden text-white cursor-pointer sm:block'
         >
           Sponsors
         </p>
@@ -55,7 +55,7 @@ const Navbar = () => {
           target='_blank'
           rel='noreferrer'
           href='https://5h574blbwuh.typeform.com/to/eJppZjWY'
-          className='px-6 py-2 mr-12 rounded-full cursor-pointer bg-gradient-to-b from-gradientTop to-gradientBottom'
+          className='px-6 py-2 mr-8 rounded-full cursor-pointer sm:mr-12 bg-gradient-to-b from-gradientTop to-gradientBottom'
         >
           Register
         </a>

@@ -156,13 +156,13 @@ export default function Home() {
         <Navbar />
 
         <div className='flex items-start justify-center w-full h-full'>
-          <div className='flex flex-col items-center justify-start w-full h-[87vh] mt-[13vh] mx-8'>
+          <div className='flex flex-col items-center justify-start w-full h-[87vh] mt-[13vh] mx-6 sm:mx-8'>
             <div
               style={{ backgroundImage: 'url("/images/main_bg.png")' }}
-              className='w-full h-[59%] mb-[1%] flex flex-col justify-center items-center rounded-[2rem] grayscale-[50%] bg-cover'
+              className='w-full h-[96%] sm:h-[59%] mb-[1%] flex flex-col justify-center items-center rounded-[2rem] grayscale-[50%] bg-cover'
             >
-              <h1 className='font-bold text-7xl'>TISB Hacks 3.0</h1>
-              <h3 className='flex items-center justify-center my-4 text-2xl font-semibold'>
+              <h1 className='text-4xl font-bold sm:text-7xl'>TISB Hacks 3.0</h1>
+              <h3 className='flex items-center justify-center my-4 text-xl font-semibold sm:text-2xl'>
                 January 28th
                 <span>
                   <img
@@ -184,7 +184,7 @@ export default function Home() {
             </div>
 
             {/* Themes */}
-            <div className='flex items-center justify-center w-full h-[38%] mb-[2%] gap-4'>
+            <div className='sm:flex items-center justify-center w-full h-[38%] mb-[2%] gap-4 hidden'>
               <div
                 className='flex items-center justify-center w-1/4 h-full bg-cover rounded-[2rem] flex-col grayscale-[60%]'
                 style={{ backgroundImage: 'url("/images/healthcare.png")' }}
@@ -237,7 +237,7 @@ export default function Home() {
             <h3 className='mt-16 mb-8 text-4xl font-semibold' id='sponsors'>
               Sponsors
             </h3>
-            <div className='flex flex-col items-start justify-start gap-8 ml-4'>
+            <div className='flex flex-col items-start justify-start gap-8 ml-4 overflow-x-auto'>
               <div className='flex items-start justify-start w-full gap-8'>
                 <img src='/sponsors/cobalt.png' alt='' className='w-40' />
                 <img
@@ -260,7 +260,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className='flex flex-col items-center justify-center'>
+          <div className='flex-col items-center justify-center hidden sm:flex'>
             <img
               src='/images/secondary_bg.png'
               className='h-full select-none'

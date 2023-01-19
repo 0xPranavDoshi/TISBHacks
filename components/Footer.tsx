@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <div className='w-full h-[14vh] bg-black flex justify-center items-center flex-col'>
+    <div className='text-center w-full h-[14vh] bg-black flex justify-center items-center flex-col'>
       <h5 className='text-lg'>
         Have queries? Write to us at{' '}
         <span className=' text-secondary'>hackathon@tisb.ac.in</span>

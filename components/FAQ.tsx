@@ -31,7 +31,7 @@ export const enum FAQEnum {
 
 const FAQ = ({ question, answer, faqVal, faq, setFaq }: FAQState) => {
   return (
-    <div className='mt-4 pl-4 pr-4 rounded-md w-[45rem] py-4 flex flex-col justify-start items-start bg-gray'>
+    <div className='mt-4 pl-4 pr-4 rounded-md w-full sm:w-[45rem] py-4 flex flex-col justify-start items-start bg-gray'>
       <div
         className='flex items-center justify-between w-full cursor-pointer'
         onClick={() => (faq === faqVal ? setFaq(FAQEnum.NONE) : setFaq(faqVal))}
