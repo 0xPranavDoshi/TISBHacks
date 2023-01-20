@@ -14,7 +14,7 @@ export default function Home() {
       faqVal: FAQEnum.Q1,
       question: 'What are the benefits of participating?',
       answer:
-        'Learn new skills, add a nation-wide event to your Resume, network with the best programmers in India, and win cash prizes worth Rs. 65000. All while meeting great people, having great food, and having great fun!',
+        'Learn new skills, add a nation-wide event to your Resume, network with the best programmers in India, and win cash prizes worth Rs. 100,000. All while meeting great people, having great food, and having great fun!',
     },
     {
       faqVal: FAQEnum.Q2,
@@ -40,17 +40,17 @@ export default function Home() {
       answer: (
         <>
           <p>
-            Yes! There are cash prizes worth Rs. 65’000 in total distributed as
+            Yes! There are cash prizes worth Rs. 100’000 in total distributed as
             follows:
           </p>
           <br />
           <p>
-            <b>Coding Category:</b> First Place = 15’000, Second Place = 10’000,
-            Third Place = 5000
+            <b>Coding Category:</b> First Place = 25’000, Second Place = 15’000,
+            Third Place = 10’000
           </p>
           <p>
-            <b>UX Design Category:</b> First Place = 15’000, Second Place =
-            10’000, Third Place = 5000
+            <b>UX Design Category:</b> First Place = 25’000, Second Place =
+            15’000, Third Place = 10’000
           </p>
         </>
       ),
@@ -159,7 +159,7 @@ export default function Home() {
           <div className='flex flex-col items-center justify-start w-full h-[87vh] mt-[13vh] mx-6 sm:mx-8'>
             <div
               style={{ backgroundImage: 'url("/images/main_bg.png")' }}
-              className='w-full h-[96%] sm:h-[59%] mb-[1%] flex flex-col justify-center items-center rounded-[2rem] grayscale-[50%] bg-cover'
+              className='w-full h-[82%] mb-[4%] sm:h-[54%] sm:mb-[1%] flex flex-col justify-center items-center rounded-[2rem] grayscale-[50%] bg-cover'
             >
               <h1 className='text-4xl font-bold sm:text-7xl'>TISB Hacks 3.0</h1>
               <h3 className='flex items-center justify-center my-4 text-xl font-semibold sm:text-2xl'>
@@ -184,7 +184,7 @@ export default function Home() {
             </div>
 
             {/* Themes */}
-            <div className='sm:flex items-center justify-center w-full h-[38%] mb-[2%] gap-4 hidden'>
+            <div className='sm:flex items-center justify-center w-full h-[29%] mb-[1%] gap-4 hidden'>
               <div
                 className='flex items-center justify-center w-1/4 h-full bg-cover rounded-[2rem] flex-col grayscale-[60%]'
                 style={{ backgroundImage: 'url("/images/healthcare.png")' }}
@@ -213,6 +213,16 @@ export default function Home() {
                 <h2 className='text-4xl font-bold'>Social Good</h2>
                 <p className='text-tertiary'>theme</p>
               </div>
+            </div>
+
+            {/* Prize Pool */}
+            <div
+              className='flex justify-center items-center w-full h-[12%] mb-[2%] bg-cover rounded-[3rem] grayscale-[50%]'
+              style={{ backgroundImage: 'url("/images/prize_pool.png")' }}
+            >
+              <h3 className='text-3xl font-semibold text-center text-white sm:text-4xl'>
+                ₹100,000 in Cash Prizes
+              </h3>
             </div>
           </div>
         </div>
