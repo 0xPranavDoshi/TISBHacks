@@ -161,8 +161,10 @@ export default function Home() {
               style={{ backgroundImage: 'url("/images/main_bg.png")' }}
               className='w-full h-[82%] mb-[4%] sm:h-[54%] sm:mb-[1%] flex flex-col justify-center items-center rounded-[2rem] grayscale-[50%] bg-cover'
             >
-              <h1 className='text-4xl font-bold sm:text-7xl'>TISB Hacks 3.0</h1>
-              <h3 className='flex items-center justify-center my-4 text-xl font-semibold sm:text-2xl'>
+              <h1 className='text-4xl font-bold text-white sm:text-7xl'>
+                TISB Hacks 3.0
+              </h1>
+              <h3 className='flex items-center justify-center my-4 text-xl font-semibold text-white sm:text-2xl'>
                 January 28th
                 <span>
                   <img
@@ -189,28 +191,28 @@ export default function Home() {
                 className='flex items-center justify-center w-1/4 h-full bg-cover rounded-[2rem] flex-col grayscale-[60%]'
                 style={{ backgroundImage: 'url("/images/healthcare.png")' }}
               >
-                <h2 className='text-4xl font-bold'>Healthcare</h2>
+                <h2 className='text-4xl font-bold text-white'>Healthcare</h2>
                 <p className='text-tertiary'>theme</p>
               </div>
               <div
                 className='flex flex-col items-center justify-center w-1/4 h-full bg-cover rounded-[2rem] grayscale-[60%]'
                 style={{ backgroundImage: 'url("/images/education.png")' }}
               >
-                <h2 className='text-4xl font-bold'>Education</h2>
+                <h2 className='text-4xl font-bold text-white'>Education</h2>
                 <p className='text-tertiary'>theme</p>
               </div>
               <div
                 className='flex flex-col items-center justify-center w-1/4 h-full bg-cover rounded-[2rem] grayscale-[60%]'
                 style={{ backgroundImage: 'url("/images/transport.png")' }}
               >
-                <h2 className='text-4xl font-bold'>Transport</h2>
+                <h2 className='text-4xl font-bold text-white'>Transport</h2>
                 <p className='text-tertiary'>theme</p>
               </div>
               <div
                 className='flex flex-col items-center justify-center w-1/4 h-full bg-cover rounded-[2rem] grayscale-[60%]'
                 style={{ backgroundImage: 'url("/images/social_good.png")' }}
               >
-                <h2 className='text-4xl font-bold'>Social Good</h2>
+                <h2 className='text-4xl font-bold text-white'>Social Good</h2>
                 <p className='text-tertiary'>theme</p>
               </div>
             </div>
