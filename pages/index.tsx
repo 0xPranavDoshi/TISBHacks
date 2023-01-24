@@ -345,7 +345,7 @@ const MiniEvent = ({
   description: string
 }) => {
   return (
-    <div className='flex flex-col items-center justify-start w-full p-4 px-8 bg-gray rounded-[2rem] h-auto sm:h-52'>
+    <div className='flex flex-col items-center justify-start w-full pt-4 pb-8 px-8 bg-gray rounded-[2rem] h-auto sm:min-h-[13rem]'>
       <h2 className='text-3xl font-semibold text-center'>{title}</h2>
       <p className='mt-4 text-lg text-center'>{description}</p>
     </div>
@@ -360,7 +360,7 @@ const MainEvent = ({
   description: string
 }) => {
   return (
-    <div className='flex flex-col items-center justify-start w-full pt-4 pb-8 px-8 bg-gray rounded-[2rem] h-auto sm:min-h-72'>
+    <div className='flex flex-col items-center justify-start w-full pt-4 pb-8 px-8 bg-gray rounded-[2rem] h-auto'>
       <h2 className='w-full text-3xl font-semibold text-center'>{title}</h2>
       <p className='mt-4 text-lg text-center'>{description}</p>
     </div>
