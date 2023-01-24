@@ -229,6 +229,50 @@ export default function Home() {
           </div>
         </div>
 
+        <div className='flex w-screen h-auto bg-primary'>
+          <div className='flex flex-col items-center justify-center w-full h-auto px-6 sm:px-8'>
+            <h1 className='w-full mb-8 text-6xl font-semibold text-left'>
+              Main Events
+            </h1>
+            <div className='flex flex-col items-start justify-center w-full h-auto gap-4 sm:flex-row'>
+              <MainEvent
+                title='Coding Category'
+                description='Participants will use their programming skills to craft up a working digital product that addresses a real-world problem within the themes of the hackathon. Teams will have a week to collaborate and develop a software solution, using any language, technology stack, or library, except drag-and-drop softwares like Scratch or MIT App Inventor. At the end of the hackathon, teams will present their final product to a panel of judges, showcasing the functionality, usability, and potential impact of their solution.'
+              />
+              <MainEvent
+                title='No-Coding Category'
+                description='Participants will use their UX Development and Product Design skills to prototype a physical or digital product that addresses a real-world problem within the themes of the hackathon. Teams will have a week to brainstorm, design, and create a working prototype of their product. At the end of the hackathon, teams will present their prototype to a panel of judges, showcasing the design, usability, and potential impact of their solution.'
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className='flex w-screen h-auto mt-8 bg-primary'>
+          <div className='flex flex-col items-center justify-center w-full h-auto px-6 sm:px-8'>
+            <h1 className='w-full mb-8 text-6xl font-semibold text-left'>
+              Mini Events
+            </h1>
+            <div className='flex flex-col items-start justify-center w-full h-auto gap-4 sm:flex-row'>
+              <MiniEvent
+                title='Competitive Coding'
+                description='Compete against other hackers in a series of algorithmic challenges.'
+              />
+              <MiniEvent
+                title='Crisis Event'
+                description='Do you have what it takes to handle the heat of the logistical and ethical dilemmas of running a tech startup in today’s world?'
+              />
+              <MiniEvent
+                title='Startup Battlefield'
+                description='Pitch your startup idea to a panel of judges for a chance to win exciting prizes. Do you think the sharks will bite?'
+              />
+              <MiniEvent
+                title='Gaming Event'
+                description='End the day with a relaxing game of Valorant with your competitors.'
+              />
+            </div>
+          </div>
+        </div>
+
         <div className='absolute left-0 top-[90vh]' id='faqs'></div>
         <div className='flex items-start justify-between w-screen h-auto bg-primary'>
           <div className='flex flex-col items-start justify-start p-8'>
@@ -289,5 +333,35 @@ export default function Home() {
         <Footer />
       </div>
     </>
+  )
+}
+
+const MiniEvent = ({
+  title,
+  description,
+}: {
+  title: string
+  description: string
+}) => {
+  return (
+    <div className='flex flex-col items-center justify-start w-full p-4 px-8 bg-gray rounded-[2rem] h-auto sm:h-52'>
+      <h2 className='text-3xl font-semibold text-center'>{title}</h2>
+      <p className='mt-4 text-lg text-center'>{description}</p>
+    </div>
+  )
+}
+
+const MainEvent = ({
+  title,
+  description,
+}: {
+  title: string
+  description: string
+}) => {
+  return (
+    <div className='flex flex-col items-center justify-start w-full pt-4 pb-8 px-8 bg-gray rounded-[2rem] h-auto sm:min-h-72'>
+      <h2 className='w-full text-3xl font-semibold text-center'>{title}</h2>
+      <p className='mt-4 text-lg text-center'>{description}</p>
+    </div>
   )
 }
