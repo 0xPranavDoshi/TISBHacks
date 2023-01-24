@@ -28,6 +28,16 @@ const Navbar = () => {
         <p
           onClick={async () => {
             router.pathname !== '/' && (await router.push('/'))
+            let element = document.getElementById('events')
+            element?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          }}
+          className='hidden text-white cursor-pointer sm:block'
+        >
+          Events
+        </p>
+        <p
+          onClick={async () => {
+            router.pathname !== '/' && (await router.push('/'))
             let element = document.getElementById('faqs')
             element?.scrollIntoView({ behavior: 'smooth', block: 'start' })
           }}

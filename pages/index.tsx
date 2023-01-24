@@ -229,6 +229,7 @@ export default function Home() {
           </div>
         </div>
 
+        <div className='absolute left-0 top-[88vh]' id='events'></div>
         <div className='flex w-screen h-auto bg-primary'>
           <div className='flex flex-col items-center justify-center w-full h-auto px-6 sm:px-8'>
             <h1 className='w-full mb-8 text-6xl font-semibold text-left'>
@@ -273,7 +274,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className='absolute left-0 top-[90vh]' id='faqs'></div>
+        <div className='mb-20' id='faqs'></div>
         <div className='flex items-start justify-between w-screen h-auto bg-primary'>
           <div className='flex flex-col items-start justify-start p-8'>
             <h1 className='mb-8 text-6xl font-semibold'>FAQs</h1>
