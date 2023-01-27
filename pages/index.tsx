@@ -274,6 +274,49 @@ export default function Home() {
           </div>
         </div>
 
+        <div className='relative bottom-20' id='prizes'></div>
+        <div className='flex w-screen h-auto mt-8 bg-primary'>
+          {/* Create a section for the prizes, explaining the prize distribution for the main and mini events */}
+          <div className='flex flex-col items-center justify-center w-full h-auto px-6 sm:px-8'>
+            <h1 className='w-full mb-8 text-6xl font-semibold text-left'>
+              Prizes
+            </h1>
+            <div className='flex flex-col items-start justify-center w-full h-auto gap-4 mb-4 sm:flex-row'>
+              <div className='flex flex-col items-center justify-start w-full pt-4 pb-8 px-8 bg-gray rounded-[2rem] h-auto sm:min-h-[13rem]'>
+                <h2 className='mb-8 text-3xl font-semibold text-center'>
+                  Coding Category
+                </h2>
+                <div className='flex flex-col items-center w-full gap-4'>
+                  <PrizeElement text='1st Place' prize='₹20,000' />
+                  <PrizeElement text='2nd Place' prize='₹15,000' />
+                  <PrizeElement text='3rd Place' prize='₹10,000' />
+                </div>
+              </div>
+
+              <div className='flex flex-col items-center justify-start w-full pt-4 pb-8 px-8 bg-gray rounded-[2rem] h-auto sm:min-h-[13rem]'>
+                <h2 className='mb-8 text-3xl font-semibold text-center'>
+                  Non-Coding Category
+                </h2>
+                <div className='flex flex-col items-center w-full gap-4'>
+                  <PrizeElement text='1st Place' prize='₹20,000' />
+                  <PrizeElement text='2nd Place' prize='₹15,000' />
+                  <PrizeElement text='3rd Place' prize='₹10,000' />
+                </div>
+              </div>
+            </div>
+
+            <div className='flex flex-col items-center justify-start w-full pt-4 pb-8 px-8 bg-gray rounded-[2rem] h-auto sm:min-h-[13rem]'>
+              <h2 className='mb-8 text-3xl font-semibold text-center'>
+                Mini Events
+              </h2>
+              <div className='flex flex-col items-center w-full gap-4'>
+                <PrizeElement text='Competitive Coding' prize='₹5,000' />
+                <PrizeElement text='Startup Battlefield' prize='₹5,000' />
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className='mb-20' id='faqs'></div>
         <div className='flex items-start justify-between w-screen h-auto bg-primary'>
           <div className='flex flex-col items-start justify-start p-8'>
@@ -334,6 +377,17 @@ export default function Home() {
         <Footer />
       </div>
     </>
+  )
+}
+
+const PrizeElement = ({ text, prize }: { text: string; prize: string }) => {
+  return (
+    <div className='rounded-xl w-[90%] h-14 bg-gray2 px-4 flex items-center justify-between'>
+      <p className='text-xl'>{text}</p>
+      <p style={{ color: 'mediumpurple' }} className='text-2xl'>
+        Rs. {prize}
+      </p>
+    </div>
   )
 }
 

@@ -21,7 +21,7 @@ const Navbar = () => {
             router.pathname !== '/' && (await router.push('/'))
             document.body.scrollIntoView({ behavior: 'smooth', block: 'start' })
           }}
-          className='hidden text-white cursor-pointer sm:block'
+          className='hidden text-white cursor-pointer select-none sm:block'
         >
           Home
         </p>
@@ -31,9 +31,19 @@ const Navbar = () => {
             let element = document.getElementById('events')
             element?.scrollIntoView({ behavior: 'smooth', block: 'start' })
           }}
-          className='hidden text-white cursor-pointer sm:block'
+          className='hidden text-white cursor-pointer select-none sm:block'
         >
           Events
+        </p>
+        <p
+          onClick={async () => {
+            router.pathname !== '/' && (await router.push('/'))
+            let element = document.getElementById('prizes')
+            element?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          }}
+          className='hidden text-white cursor-pointer select-none sm:block'
+        >
+          Prizes
         </p>
         <p
           onClick={async () => {
@@ -41,7 +51,7 @@ const Navbar = () => {
             let element = document.getElementById('faqs')
             element?.scrollIntoView({ behavior: 'smooth', block: 'start' })
           }}
-          className='hidden text-white cursor-pointer sm:block'
+          className='hidden text-white cursor-pointer select-none sm:block'
         >
           FAQs
         </p>
@@ -51,7 +61,7 @@ const Navbar = () => {
             let element = document.getElementById('sponsors')
             element?.scrollIntoView({ behavior: 'smooth', block: 'start' })
           }}
-          className='hidden text-white cursor-pointer sm:block'
+          className='hidden text-white cursor-pointer select-none sm:block'
         >
           Sponsors
         </p>
