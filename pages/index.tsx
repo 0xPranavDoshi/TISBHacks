@@ -34,27 +34,27 @@ export default function Home() {
       answer:
         'We have two categories; one for ages 10-13 and another for ages 13-18.',
     },
-    {
-      faqVal: FAQEnum.Q5,
-      question: 'Are there Cash Prizes?',
-      answer: (
-        <>
-          <p>
-            Yes! There are cash prizes worth Rs. 100’000 in total distributed as
-            follows:
-          </p>
-          <br />
-          <p>
-            <b>Coding Category:</b> First Place = 25’000, Second Place = 15’000,
-            Third Place = 10’000
-          </p>
-          <p>
-            <b>UX Design Category:</b> First Place = 25’000, Second Place =
-            15’000, Third Place = 10’000
-          </p>
-        </>
-      ),
-    },
+    // {
+    //   faqVal: FAQEnum.Q5,
+    //   question: 'Are there Cash Prizes?',
+    //   answer: (
+    //     <>
+    //       <p>
+    //         Yes! There are cash prizes worth Rs. 100’000 in total distributed as
+    //         follows:
+    //       </p>
+    //       <br />
+    //       <p>
+    //         <b>Coding Category:</b> First Place = 25’000, Second Place = 15’000,
+    //         Third Place = 10’000
+    //       </p>
+    //       <p>
+    //         <b>UX Design Category:</b> First Place = 25’000, Second Place =
+    //         15’000, Third Place = 10’000
+    //       </p>
+    //     </>
+    //   ),
+    // },
     {
       faqVal: FAQEnum.Q6,
       question:
@@ -259,12 +259,8 @@ export default function Home() {
                 description='Compete against other hackers in a series of algorithmic challenges.'
               />
               <MiniEvent
-                title='Crisis Event'
-                description='Do you have what it takes to handle the heat of the logistical and ethical dilemmas of running a tech startup in today’s world?'
-              />
-              <MiniEvent
                 title='Startup Battlefield'
-                description='Pitch your startup idea to a panel of judges for a chance to win exciting prizes. Do you think the sharks will bite?'
+                description='Do you have what it takes to handle the heat of the logistical and ethical dilemmas of running a tech startup in today’s world?'
               />
               <MiniEvent
                 title='Gaming Event'
