@@ -251,7 +251,7 @@ export default function Home() {
             </h1>
             <div className='flex flex-col items-start justify-center w-full h-auto gap-4 sm:flex-row'>
               <MiniEvent
-                title='Non-Coding Category'
+                title='Non-Coding Event'
                 description='Use your UI/UX skills to prototype a physical or digital product within the themes of the hackathon.'
               />
               <MiniEvent
