@@ -233,16 +233,12 @@ export default function Home() {
         <div className='flex w-screen h-auto bg-primary'>
           <div className='flex flex-col items-center justify-center w-full h-auto px-6 sm:px-8'>
             <h1 className='w-full mb-8 text-6xl font-semibold text-left'>
-              Main Events
+              Main Event
             </h1>
             <div className='flex flex-col items-start justify-center w-full h-auto gap-4 sm:flex-row'>
               <MainEvent
-                title='Coding Category'
+                title='Coding Event'
                 description='Participants will use their programming skills to craft up a working digital product that addresses a real-world problem within the themes of the hackathon. Teams will have a week to collaborate and develop a software solution, using any language, technology stack, or library, except drag-and-drop softwares like Scratch or MIT App Inventor. At the end of the hackathon, teams will present their final product to a panel of judges, showcasing the functionality, usability, and potential impact of their solution.'
-              />
-              <MainEvent
-                title='No-Coding Category'
-                description='Participants will use their UX Development and Product Design skills to prototype a physical or digital product that addresses a real-world problem within the themes of the hackathon. Teams will have a week to brainstorm, design, and create a working prototype of their product. At the end of the hackathon, teams will present their prototype to a panel of judges, showcasing the design, usability, and potential impact of their solution.'
               />
             </div>
           </div>
@@ -254,6 +250,10 @@ export default function Home() {
               Mini Events
             </h1>
             <div className='flex flex-col items-start justify-center w-full h-auto gap-4 sm:flex-row'>
+              <MiniEvent
+                title='Non-Coding Category'
+                description='Use your UI/UX skills to prototype a physical or digital product within the themes of the hackathon.'
+              />
               <MiniEvent
                 title='Competitive Coding'
                 description='Compete against other hackers in a series of algorithmic challenges.'
@@ -280,7 +280,7 @@ export default function Home() {
             <div className='flex flex-col items-start justify-center w-full h-auto gap-4 mb-4 sm:flex-row'>
               <div className='flex flex-col items-center justify-start w-full pt-4 pb-8 px-8 bg-gray rounded-[2rem] h-auto sm:min-h-[13rem]'>
                 <h2 className='mb-8 text-3xl font-semibold text-center'>
-                  Coding Category
+                  Senior Category
                 </h2>
                 <div className='flex flex-col items-center w-full gap-4'>
                   <PrizeElement text='1st Place' prize='₹20,000' />
@@ -291,12 +291,12 @@ export default function Home() {
 
               <div className='flex flex-col items-center justify-start w-full pt-4 pb-8 px-8 bg-gray rounded-[2rem] h-auto sm:min-h-[13rem]'>
                 <h2 className='mb-8 text-3xl font-semibold text-center'>
-                  Non-Coding Category
+                  Junior Category
                 </h2>
                 <div className='flex flex-col items-center w-full gap-4'>
-                  <PrizeElement text='1st Place' prize='₹20,000' />
-                  <PrizeElement text='2nd Place' prize='₹15,000' />
-                  <PrizeElement text='3rd Place' prize='₹10,000' />
+                  <PrizeElement text='1st Place' prize='₹15,000' />
+                  <PrizeElement text='2nd Place' prize='₹10,000' />
+                  <PrizeElement text='3rd Place' prize='₹5,000' />
                 </div>
               </div>
             </div>
@@ -306,8 +306,10 @@ export default function Home() {
                 Mini Events
               </h2>
               <div className='flex flex-col items-center w-full gap-4'>
+                <PrizeElement text='Non-Coding Event' prize='₹10,000' />
                 <PrizeElement text='Competitive Coding' prize='₹5,000' />
                 <PrizeElement text='Startup Battlefield' prize='₹5,000' />
+                <PrizeElement text='Gaming' prize='₹5,000' />
               </div>
             </div>
           </div>
