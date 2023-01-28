@@ -108,7 +108,7 @@ export default function Home() {
       faqVal: FAQEnum.Q10,
       question: 'What should I bring?',
       answer:
-        'We suggest you to bring your laptops and mobile phones. You can bring anything else as long as it complies with the code of conduct.',
+        'We suggest you to bring your laptops, chargers, mobile phones and your school ID cards. You can bring anything else as long as it complies with the code of conduct.',
     },
     {
       faqVal: FAQEnum.Q11,
@@ -280,7 +280,7 @@ export default function Home() {
             <div className='flex flex-col items-start justify-center w-full h-auto gap-4 mb-4 sm:flex-row'>
               <div className='flex flex-col items-center justify-start w-full pt-4 pb-8 px-8 bg-gray rounded-[2rem] h-auto sm:min-h-[13rem]'>
                 <h2 className='mb-8 text-3xl font-semibold text-center'>
-                  Senior Category
+                  Coding Event - Senior Category
                 </h2>
                 <div className='flex flex-col items-center w-full gap-4'>
                   <PrizeElement text='1st Place' prize='₹20,000' />
@@ -291,7 +291,7 @@ export default function Home() {
 
               <div className='flex flex-col items-center justify-start w-full pt-4 pb-8 px-8 bg-gray rounded-[2rem] h-auto sm:min-h-[13rem]'>
                 <h2 className='mb-8 text-3xl font-semibold text-center'>
-                  Junior Category
+                  Coding Event - Junior Category
                 </h2>
                 <div className='flex flex-col items-center w-full gap-4'>
                   <PrizeElement text='1st Place' prize='₹15,000' />
