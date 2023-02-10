@@ -1,38 +1,40 @@
 /* eslint-disable @next/next/no-img-element */
-import Head from 'next/head'
-import { Inter } from '@next/font/google'
-import Navbar from '@/components/Navbar'
-import { useState } from 'react'
-import Footer from '@/components/Footer'
-import FAQ, { FAQEnum, FAQProps } from '@/components/FAQ'
+import Head from "next/head";
+import { Inter } from "@next/font/google";
+import Navbar from "@/components/Navbar";
+import { useState } from "react";
+import Footer from "@/components/Footer";
+import FAQ, { FAQEnum, FAQProps } from "@/components/FAQ";
+import { FiChevronDown, FiChevronUp } from "react-icons/fi";
+import router from "next/router";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const faqs: FAQProps[] = [
     {
       faqVal: FAQEnum.Q1,
-      question: 'What are the benefits of participating?',
+      question: "What are the benefits of participating?",
       answer:
-        'Learn new skills, add a nation-wide event to your Resume, network with the best programmers in India, and win cash prizes worth Rs. 100,000. All while meeting great people, having great food, and having great fun!',
+        "Learn new skills, add a nation-wide event to your Resume, network with the best programmers in India, and win cash prizes worth Rs. 100,000. All while meeting great people, having great food, and having great fun!",
     },
     {
       faqVal: FAQEnum.Q2,
-      question: 'Is there support available?',
+      question: "Is there support available?",
       answer:
-        'The environment at these events is designed specifically to encourage everyone to have fun and help each other. If you’re ever stuck on anything, speak to a volunteer or a HOD who will help you. The primary purpose of the hackathon is to learn, so don’t be afraid to ask!',
+        "The environment at these events is designed specifically to encourage everyone to have fun and help each other. If you’re ever stuck on anything, speak to a volunteer or a HOD who will help you. The primary purpose of the hackathon is to learn, so don’t be afraid to ask!",
     },
     {
       faqVal: FAQEnum.Q3,
-      question: 'Do you need coding experience to participate?',
+      question: "Do you need coding experience to participate?",
       answer:
-        'No! If you’re new to programming, feel free to participate in the UI Development Category.',
+        "No! If you’re new to programming, feel free to participate in the UI Development Category.",
     },
     {
       faqVal: FAQEnum.Q4,
-      question: 'Is the hackathon open to anyone?',
+      question: "Is the hackathon open to anyone?",
       answer:
-        'We have two categories; one for ages 10-13 and another for ages 13-18.',
+        "We have two categories; one for ages 10-13 and another for ages 13-18.",
     },
     // {
     //   faqVal: FAQEnum.Q5,
@@ -58,24 +60,24 @@ export default function Home() {
     {
       faqVal: FAQEnum.Q6,
       question:
-        'I have another question that is not answered in your FAQs, what should I do?',
-      answer: 'Please contact us at hackathon@tisb.ac.in for further queries.',
+        "I have another question that is not answered in your FAQs, what should I do?",
+      answer: "Please contact us at hackathon@tisb.ac.in for further queries.",
     },
     {
       faqVal: FAQEnum.Q7,
-      question: 'What about confidentiality of information?',
+      question: "What about confidentiality of information?",
       answer:
-        'If you don’t want to distribute your code base that is ok, if you don’t want to present your project, then a hackathon might not be the ideal place for you to work on that idea. We will take photos at the event and you will sign a document that allows us to use those pictures for social media. So if you don’t want to be on any pictures please tell us beforehand!',
+        "If you don’t want to distribute your code base that is ok, if you don’t want to present your project, then a hackathon might not be the ideal place for you to work on that idea. We will take photos at the event and you will sign a document that allows us to use those pictures for social media. So if you don’t want to be on any pictures please tell us beforehand!",
     },
     {
       faqVal: FAQEnum.Q8,
-      question: 'Do all team members need to be present in person?',
+      question: "Do all team members need to be present in person?",
       answer:
-        'Yes, every team member should be present. If a team member cannot be present during the pitch or can only come later please tell us and we will find a way to manage!',
+        "Yes, every team member should be present. If a team member cannot be present during the pitch or can only come later please tell us and we will find a way to manage!",
     },
     {
       faqVal: FAQEnum.Q9,
-      question: 'What is the Program/Timetable?',
+      question: "What is the Program/Timetable?",
       answer: (
         <>
           <p>The schedule of events on February 4th are as follows:</p>
@@ -106,27 +108,27 @@ export default function Home() {
     },
     {
       faqVal: FAQEnum.Q10,
-      question: 'What should I bring?',
+      question: "What should I bring?",
       answer:
-        'We suggest you to bring your laptops, chargers, mobile phones and your school ID cards. You can bring anything else as long as it complies with the code of conduct.',
+        "We suggest you to bring your laptops, chargers, mobile phones and your school ID cards. You can bring anything else as long as it complies with the code of conduct.",
     },
     {
       faqVal: FAQEnum.Q11,
-      question: 'Will there be wireless internet access?',
-      answer: 'Yes, there will be free internet access to all participants.',
+      question: "Will there be wireless internet access?",
+      answer: "Yes, there will be free internet access to all participants.",
     },
     {
       faqVal: FAQEnum.Q12,
-      question: 'Will there be food available?',
-      answer: 'Yes, there will be unlimited snacks available for participants!',
+      question: "Will there be food available?",
+      answer: "Yes, there will be unlimited snacks available for participants!",
     },
     {
       faqVal: FAQEnum.Q13,
-      question: 'How are the winners selected?',
+      question: "How are the winners selected?",
       answer: (
         <>
           There will be an independent Jury comprised of experienced judges
-          selecting the winners with a rating system:{' '}
+          selecting the winners with a rating system:{" "}
           <b>
             (Implementability, financial benefits, presentation skills,
             creativity)
@@ -136,189 +138,242 @@ export default function Home() {
     },
     {
       faqVal: FAQEnum.Q14,
-      question: 'What is the dress code for the event?',
+      question: "What is the dress code for the event?",
       answer:
-        'While there is no official dress code for the event, we wish to remind participants to dress appropriately.',
+        "While there is no official dress code for the event, we wish to remind participants to dress appropriately.",
     },
-  ]
+  ];
 
-  const [faq, setFaq] = useState<FAQEnum>(FAQEnum.NONE)
+  const [faq, setFaq] = useState<FAQEnum>(FAQEnum.NONE);
 
   return (
     <>
       <Head>
         <title>TISBHacks</title>
-        <meta name='description' content='TisbHacks' />
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <link rel='icon' href='/logo.png' />
+        <meta name="description" content="TisbHacks" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/logo.png" />
       </Head>
-      <div className='w-screen h-full bg-primary'>
+      <div className="w-screen h-full bg-primary">
         <Navbar />
 
-        <div className='flex items-start justify-center w-full h-full'>
-          <div className='flex flex-col items-center justify-start w-full h-[87vh] mt-[13vh] mx-6 sm:mx-8'>
+        <div className="flex items-start justify-center w-full h-full">
+          <div className="flex flex-col items-center justify-start w-full h-[87vh] mt-[13vh] mx-6 sm:mx-8">
             <div
               style={{ backgroundImage: 'url("/images/main_bg.png")' }}
-              className='w-full h-[82%] mb-[4%] sm:h-[54%] sm:mb-[1%] flex flex-col justify-center items-center rounded-[2rem] grayscale-[50%] bg-cover'
+              className="w-full h-[82%] mb-[4%] sm:h-[54%] sm:mb-[1%] flex flex-col justify-center items-center rounded-[2rem] grayscale-[50%] bg-cover"
             >
-              <h1 className='text-4xl font-bold text-white sm:text-7xl'>
+              <h1 className="text-4xl font-bold text-white sm:text-7xl">
                 TISB Hacks 3.0
               </h1>
-              <h3 className='flex items-center justify-center my-4 text-xl font-semibold text-white sm:text-2xl'>
+              <h3 className="flex items-center justify-center my-4 text-xl font-semibold text-white sm:text-2xl">
                 January 28th
                 <span>
                   <img
-                    src='/images/arrow_right.png'
-                    alt=''
-                    className='w-8 mx-3'
+                    src="/images/arrow_right.png"
+                    alt=""
+                    className="w-8 mx-3"
                   />
                 </span>
                 February 4th
               </h3>
-              <a
-                target='_blank'
-                rel='noreferrer'
-                href='https://5h574blbwuh.typeform.com/to/eJppZjWY'
-                className='flex items-center justify-center px-10 py-2 mt-2 text-xl font-semibold text-black bg-white rounded-full cursor-pointer '
+              <div
+                onClick={async () => {
+                  router.pathname !== "/" && (await router.push("/"));
+                  let element = document.getElementById("winners");
+                  element?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+                }}
+                className="flex items-center justify-center px-10 py-2 mt-2 text-xl font-semibold text-black bg-white rounded-full cursor-pointer "
               >
-                Register
-              </a>
+                View Winners
+              </div>
             </div>
 
             {/* Themes */}
-            <div className='sm:flex items-center justify-center w-full h-[29%] mb-[1%] gap-4 hidden'>
+            <div className="sm:flex items-center justify-center w-full h-[29%] mb-[1%] gap-4 hidden">
               <div
-                className='flex items-center justify-center w-1/4 h-full bg-cover rounded-[2rem] flex-col grayscale-[60%]'
+                className="flex items-center justify-center w-1/4 h-full bg-cover rounded-[2rem] flex-col grayscale-[60%]"
                 style={{ backgroundImage: 'url("/images/healthcare.png")' }}
               >
-                <h2 className='text-4xl font-bold text-white'>Healthcare</h2>
-                <p className='text-tertiary'>theme</p>
+                <h2 className="text-4xl font-bold text-white">Healthcare</h2>
+                <p className="text-tertiary">theme</p>
               </div>
               <div
-                className='flex flex-col items-center justify-center w-1/4 h-full bg-cover rounded-[2rem] grayscale-[60%]'
+                className="flex flex-col items-center justify-center w-1/4 h-full bg-cover rounded-[2rem] grayscale-[60%]"
                 style={{ backgroundImage: 'url("/images/education.png")' }}
               >
-                <h2 className='text-4xl font-bold text-white'>Education</h2>
-                <p className='text-tertiary'>theme</p>
+                <h2 className="text-4xl font-bold text-white">Education</h2>
+                <p className="text-tertiary">theme</p>
               </div>
               <div
-                className='flex flex-col items-center justify-center w-1/4 h-full bg-cover rounded-[2rem] grayscale-[60%]'
+                className="flex flex-col items-center justify-center w-1/4 h-full bg-cover rounded-[2rem] grayscale-[60%]"
                 style={{ backgroundImage: 'url("/images/transport.png")' }}
               >
-                <h2 className='text-4xl font-bold text-white'>Transport</h2>
-                <p className='text-tertiary'>theme</p>
+                <h2 className="text-4xl font-bold text-white">Transport</h2>
+                <p className="text-tertiary">theme</p>
               </div>
               <div
-                className='flex flex-col items-center justify-center w-1/4 h-full bg-cover rounded-[2rem] grayscale-[60%]'
+                className="flex flex-col items-center justify-center w-1/4 h-full bg-cover rounded-[2rem] grayscale-[60%]"
                 style={{ backgroundImage: 'url("/images/social_good.png")' }}
               >
-                <h2 className='text-4xl font-bold text-white'>Social Good</h2>
-                <p className='text-tertiary'>theme</p>
+                <h2 className="text-4xl font-bold text-white">Social Good</h2>
+                <p className="text-tertiary">theme</p>
               </div>
             </div>
 
             {/* Prize Pool */}
             <div
-              className='flex justify-center items-center w-full h-[12%] mb-[2%] bg-cover rounded-[3rem] grayscale-[50%]'
+              className="flex justify-center items-center w-full h-[12%] mb-[2%] bg-cover rounded-[3rem] grayscale-[50%]"
               style={{ backgroundImage: 'url("/images/prize_pool.png")' }}
             >
-              <h3 className='text-3xl font-semibold text-center text-white sm:text-4xl'>
+              <h3 className="text-3xl font-semibold text-center text-white sm:text-4xl">
                 ₹100,000 in Cash Prizes
               </h3>
             </div>
           </div>
         </div>
 
-        <div className='absolute left-0 top-[88vh]' id='events'></div>
-        <div className='flex w-screen h-auto bg-primary'>
-          <div className='flex flex-col items-center justify-center w-full h-auto px-6 sm:px-8'>
-            <h1 className='w-full mb-8 text-6xl font-semibold text-left'>
-              Main Event
-            </h1>
-            <div className='flex flex-col items-start justify-center w-full h-auto gap-4 sm:flex-row'>
-              <MainEvent
-                title='Coding Event'
-                description='Participants will use their programming skills to craft up a working digital product that addresses a real-world problem within the themes of the hackathon. Teams will have a week to collaborate and develop a software solution, using any language, technology stack, or library, except drag-and-drop softwares like Scratch or MIT App Inventor. At the end of the hackathon, teams will present their final product to a panel of judges, showcasing the functionality, usability, and potential impact of their solution.'
-              />
-            </div>
-          </div>
-        </div>
-
-        <div className='flex w-screen h-auto mt-8 bg-primary'>
-          <div className='flex flex-col items-center justify-center w-full h-auto px-6 sm:px-8'>
-            <h1 className='w-full mb-8 text-6xl font-semibold text-left'>
-              Mini Events
-            </h1>
-            <div className='flex flex-col items-start justify-center w-full h-auto gap-4 sm:flex-row'>
-              <MiniEvent
-                title='Non-Coding Event'
-                description='Use your UI/UX skills to prototype a physical or digital product within the themes of the hackathon.'
-              />
-              <MiniEvent
-                title='Competitive Coding'
-                description='Compete against other hackers in a series of algorithmic challenges.'
-              />
-              <MiniEvent
-                title='Startup Battlefield'
-                description='Do you have what it takes to handle the heat of the logistical and ethical dilemmas of running a tech startup in today’s world?'
-              />
-              <MiniEvent
-                title='Gaming Event'
-                description='End the day with a relaxing game of Valorant with your competitors.'
-              />
-            </div>
-          </div>
-        </div>
-
-        <div className='relative bottom-20' id='prizes'></div>
-        <div className='flex w-screen h-auto mt-8 bg-primary'>
+        <div className="relative bottom-20" id="winners"></div>
+        <div className="flex w-screen h-auto mt-8 bg-primary">
           {/* Create a section for the prizes, explaining the prize distribution for the main and mini events */}
-          <div className='flex flex-col items-center justify-center w-full h-auto px-6 sm:px-8'>
-            <h1 className='w-full mb-8 text-6xl font-semibold text-left'>
-              Prizes
+          <div className="flex flex-col items-center justify-center w-full h-auto px-6 sm:px-8">
+            <h1 className="w-full mb-8 text-6xl font-semibold text-left">
+              Winners
             </h1>
-            <div className='flex flex-col items-start justify-center w-full h-auto gap-4 mb-4 sm:flex-row'>
-              <div className='flex flex-col items-center justify-start w-full pt-4 pb-8 px-8 bg-gray rounded-[2rem] h-auto sm:min-h-[13rem]'>
-                <h2 className='mb-8 text-3xl font-semibold text-center'>
+            <div className="flex flex-col items-start justify-center w-full h-auto gap-4 mb-4 sm:flex-row">
+              <div className="flex flex-col items-center justify-start w-full pt-4 pb-8 px-8 bg-gray rounded-[2rem] h-auto sm:min-h-[13rem]">
+                <h2 className="mb-8 text-3xl font-semibold text-center">
                   Coding Event - Senior Category
                 </h2>
-                <div className='flex flex-col items-center w-full gap-4'>
-                  <PrizeElement text='1st Place' prize='₹20,000' />
-                  <PrizeElement text='2nd Place' prize='₹15,000' />
-                  <PrizeElement text='3rd Place' prize='₹10,000' />
+                <div className="flex flex-col items-center w-full gap-4">
+                  <WinnerElement
+                    text="1st Place"
+                    prize="₹20,000"
+                    winner="DhruvTex"
+                    image="/winners/senior-first.jpg"
+                  />
+                  <WinnerElement
+                    text="2nd Place"
+                    prize="₹15,000"
+                    winner="The RideSavers"
+                    image="/winners/senior-second.jpg"
+                  />
+                  <WinnerElement
+                    text="3rd Place"
+                    prize="₹10,000"
+                    winner="The Misguided Zues"
+                    image="/winners/senior-third.jpg"
+                  />
                 </div>
               </div>
 
-              <div className='flex flex-col items-center justify-start w-full pt-4 pb-8 px-8 bg-gray rounded-[2rem] h-auto sm:min-h-[13rem]'>
-                <h2 className='mb-8 text-3xl font-semibold text-center'>
+              <div className="flex flex-col items-center justify-start w-full pt-4 pb-8 px-8 bg-gray rounded-[2rem] h-auto sm:min-h-[13rem]">
+                <h2 className="mb-8 text-3xl font-semibold text-center">
                   Coding Event - Junior Category
                 </h2>
-                <div className='flex flex-col items-center w-full gap-4'>
-                  <PrizeElement text='1st Place' prize='₹15,000' />
-                  <PrizeElement text='2nd Place' prize='₹10,000' />
-                  <PrizeElement text='3rd Place' prize='₹5,000' />
+                <div className="flex flex-col items-center w-full gap-4">
+                  <WinnerElement
+                    text="1st Place"
+                    prize="₹15,000"
+                    winner="Scanning Scouts"
+                    image="/winners/junior-first.jpg"
+                  />
+                  <WinnerElement
+                    text="2nd Place"
+                    prize="₹10,000"
+                    winner="AlphaEntities"
+                    image="/winners/junior-second.jpg"
+                  />
+                  <WinnerElement
+                    text="3rd Place"
+                    prize="₹5,000"
+                    winner="The Centurions"
+                    image="/winners/junior-third.jpg"
+                  />
                 </div>
               </div>
             </div>
 
-            <div className='flex flex-col items-center justify-start w-full pt-4 pb-8 px-8 bg-gray rounded-[2rem] h-auto sm:min-h-[13rem]'>
-              <h2 className='mb-8 text-3xl font-semibold text-center'>
+            <div className="flex flex-col items-center justify-start w-full pt-4 pb-8 px-8 bg-gray rounded-[2rem] h-auto sm:min-h-[13rem]">
+              <h2 className="mb-8 text-3xl font-semibold text-center">
                 Mini Events
               </h2>
-              <div className='flex flex-col items-center w-full gap-4'>
-                <PrizeElement text='Non-Coding Event' prize='₹10,000' />
-                <PrizeElement text='Competitive Coding' prize='₹5,000' />
-                <PrizeElement text='Startup Battlefield' prize='₹5,000' />
-                <PrizeElement text='Gaming' prize='₹5,000' />
+              <div className="flex flex-col items-center w-full gap-4">
+                <WinnerElement
+                  text="Non-Coding Event"
+                  prize="₹10,000"
+                  winner="Credit Bharat"
+                  image="/winners/non-coding.jpg"
+                />
+                <WinnerElement
+                  text="Startup Battlefield"
+                  prize="₹5,000"
+                  winner="DhruvTex"
+                  image="/winners/startup-battlefield.jpg"
+                />
+                <WinnerElement
+                  text="Competitive Coding"
+                  prize="₹5,000"
+                  winner="Alt f4, ඞ, Bob the Coder"
+                />
+                <WinnerElement
+                  text="Gaming"
+                  prize="₹5,000"
+                  winner="Serioslydude"
+                />
               </div>
             </div>
           </div>
         </div>
 
-        <div className='mb-20' id='faqs'></div>
-        <div className='flex items-start justify-between w-screen h-auto bg-primary'>
-          <div className='flex flex-col items-start justify-start p-8'>
-            <h1 className='mb-8 text-6xl font-semibold'>FAQs</h1>
+        <div className="relative bottom-16" id="events"></div>
+        <div className="flex w-screen h-auto bg-primary mt-16">
+          <div className="flex flex-col items-center justify-center w-full h-auto px-6 sm:px-8">
+            <h1 className="w-full mb-8 text-6xl font-semibold text-left">
+              Main Event
+            </h1>
+            <div className="flex flex-col items-start justify-center w-full h-auto gap-4 sm:flex-row">
+              <MainEvent
+                title="Coding Event"
+                description="Participants will use their programming skills to craft up a working digital product that addresses a real-world problem within the themes of the hackathon. Teams will have a week to collaborate and develop a software solution, using any language, technology stack, or library, except drag-and-drop softwares like Scratch or MIT App Inventor. At the end of the hackathon, teams will present their final product to a panel of judges, showcasing the functionality, usability, and potential impact of their solution."
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="flex w-screen h-auto mt-8 bg-primary">
+          <div className="flex flex-col items-center justify-center w-full h-auto px-6 sm:px-8">
+            <h1 className="w-full mb-8 text-6xl font-semibold text-left">
+              Mini Events
+            </h1>
+            <div className="flex flex-col items-start justify-center w-full h-auto gap-4 sm:flex-row">
+              <MiniEvent
+                title="Non-Coding Event"
+                description="Use your UI/UX skills to prototype a physical or digital product within the themes of the hackathon."
+              />
+              <MiniEvent
+                title="Competitive Coding"
+                description="Compete against other hackers in a series of algorithmic challenges."
+              />
+              <MiniEvent
+                title="Startup Battlefield"
+                description="Do you have what it takes to handle the heat of the logistical and ethical dilemmas of running a tech startup in today’s world?"
+              />
+              <MiniEvent
+                title="Gaming Event"
+                description="End the day with a relaxing game of Valorant with your competitors."
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="mb-20" id="faqs"></div>
+        <div className="flex items-start justify-between w-screen h-auto bg-primary">
+          <div className="flex flex-col items-start justify-start p-8">
+            <h1 className="mb-8 text-6xl font-semibold">FAQs</h1>
             {faqs.map((faqObj: FAQProps) => {
               return (
                 <FAQ
@@ -329,45 +384,45 @@ export default function Home() {
                   faqVal={faqObj.faqVal}
                   answer={faqObj.answer}
                 />
-              )
+              );
             })}
 
-            <h3 className='mt-16 mb-8 text-4xl font-semibold' id='sponsors'>
+            <h3 className="mt-16 mb-8 text-4xl font-semibold" id="sponsors">
               Sponsors
             </h3>
-            <div className='flex flex-col items-start justify-start gap-8 ml-4 overflow-x-auto'>
-              <div className='flex items-start justify-start w-full gap-8'>
-                <img src='/sponsors/cobalt.png' alt='' className='w-40' />
+            <div className="flex flex-col items-start justify-start gap-8 ml-4 overflow-x-auto">
+              <div className="flex items-start justify-start w-full gap-8">
+                <img src="/sponsors/cobalt.png" alt="" className="w-40" />
                 <img
-                  src='/sponsors/corporate gurukul.jpeg'
-                  alt=''
-                  className='w-40'
+                  src="/sponsors/corporate gurukul.jpeg"
+                  alt=""
+                  className="w-40"
                 />
-                <img src='/sponsors/jetlearn.png' alt='' className='w-28' />
-                <img src='/sponsors/looria.svg' alt='' className='w-40' />
+                <img src="/sponsors/jetlearn.png" alt="" className="w-28" />
+                <img src="/sponsors/looria.svg" alt="" className="w-40" />
               </div>
-              <div className='flex items-start justify-start w-full gap-8'>
-                <img src='/sponsors/rotary.png' alt='' className='w-40' />
+              <div className="flex items-start justify-start w-full gap-8">
+                <img src="/sponsors/rotary.png" alt="" className="w-40" />
                 <img
-                  src='/sponsors/tribesForGood.jpeg'
-                  alt=''
-                  className='w-40'
+                  src="/sponsors/tribesForGood.jpeg"
+                  alt=""
+                  className="w-40"
                 />
-                <img src='/sponsors/vimochana.png' alt='' className='w-40' />
+                <img src="/sponsors/vimochana.png" alt="" className="w-40" />
               </div>
             </div>
           </div>
 
-          <div className='flex-col items-center justify-center hidden sm:flex'>
+          <div className="flex-col items-center justify-center hidden sm:flex">
             <img
-              src='/images/secondary_bg.png'
-              className='h-full select-none'
-              alt=''
+              src="/images/secondary_bg.png"
+              className="h-full select-none"
+              alt=""
             />
             <img
-              src='/images/secondary_bg.png'
-              className='h-full select-none scale-y-[-1]'
-              alt=''
+              src="/images/secondary_bg.png"
+              className="h-full select-none scale-y-[-1]"
+              alt=""
             />
           </div>
         </div>
@@ -375,46 +430,94 @@ export default function Home() {
         <Footer />
       </div>
     </>
-  )
+  );
 }
 
-const PrizeElement = ({ text, prize }: { text: string; prize: string }) => {
+const WinnerElement = ({
+  text,
+  prize,
+  winner,
+  image,
+}: {
+  text: string;
+  prize: string;
+  winner: string;
+  image?: string;
+}) => {
+  const [expanded, setExpanded] = useState(false);
+
   return (
-    <div className='rounded-xl w-[90%] h-14 bg-gray2 px-4 flex items-center justify-between'>
-      <p className='text-xl'>{text}</p>
-      <p style={{ color: 'mediumpurple' }} className='text-2xl'>
-        Rs. {prize}
-      </p>
+    <div
+      onClick={(e) =>
+        !((e.target as Element).id === "winners_photo") &&
+        image &&
+        setExpanded(!expanded)
+      }
+      className={`rounded-xl w-[90%] bg-gray2 px-4 flex-col items-center justify-center ${
+        expanded ? "py-4" : "h-14"
+      } ${image && "cursor-pointer"}`}
+    >
+      <div
+        className={`flex justify-between items-center w-full ${
+          !expanded && "h-full"
+        }`}
+      >
+        <p className="text-xl">
+          {text} <span className="text-tertiary">(Rs. {prize})</span>
+        </p>
+        <div className="flex justify-center items-center gap-4">
+          <p style={{ color: "mediumpurple" }} className="text-2xl">
+            {winner}
+          </p>
+          {image &&
+            (expanded ? (
+              <FiChevronUp size={20} className="text-tertiary cursor-pointer" />
+            ) : (
+              <FiChevronDown
+                size={20}
+                className="text-tertiary cursor-pointer"
+              />
+            ))}
+        </div>
+      </div>
+      {expanded && (
+        <img
+          id="winners_photo"
+          src={image}
+          alt=""
+          className="pt-4 rounded-xl cursor-default"
+        />
+      )}
     </div>
-  )
-}
+  );
+};
 
 const MiniEvent = ({
   title,
   description,
 }: {
-  title: string
-  description: string
+  title: string;
+  description: string;
 }) => {
   return (
-    <div className='flex flex-col items-center justify-start w-full pt-4 pb-8 px-8 bg-gray rounded-[2rem] h-auto sm:min-h-[13rem]'>
-      <h2 className='text-3xl font-semibold text-center'>{title}</h2>
-      <p className='mt-4 text-lg text-center'>{description}</p>
+    <div className="flex flex-col items-center justify-start w-full pt-4 pb-8 px-8 bg-gray rounded-[2rem] h-auto sm:min-h-[13rem]">
+      <h2 className="text-3xl font-semibold text-center">{title}</h2>
+      <p className="mt-4 text-lg text-center">{description}</p>
     </div>
-  )
-}
+  );
+};
 
 const MainEvent = ({
   title,
   description,
 }: {
-  title: string
-  description: string
+  title: string;
+  description: string;
 }) => {
   return (
-    <div className='flex flex-col items-center justify-start w-full pt-4 pb-8 px-8 bg-gray rounded-[2rem] h-auto'>
-      <h2 className='w-full text-3xl font-semibold text-center'>{title}</h2>
-      <p className='mt-4 text-lg text-center'>{description}</p>
+    <div className="flex flex-col items-center justify-start w-full pt-4 pb-8 px-8 bg-gray rounded-[2rem] h-auto">
+      <h2 className="w-full text-3xl font-semibold text-center">{title}</h2>
+      <p className="mt-4 text-lg text-center">{description}</p>
     </div>
-  )
-}
+  );
+};
