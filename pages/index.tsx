@@ -218,8 +218,8 @@ export default function Home() {
         {/* FAQs */}
         <div className="relative bottom-20" id="faqs"></div>
         <div className="flex items-start justify-between w-screen h-auto bg-primary mt-8">
-          <div className="flex flex-col items-start justify-start p-8">
-            <h1 className="mb-8 text-6xl w-screen text-center sm:text-left font-semibold">
+          <div className="flex flex-col w-full items-start justify-start p-8">
+            <h1 className="mb-8 text-6xl w-full text-center sm:text-left font-semibold">
               FAQs
             </h1>
             {faqs.map((faqObj: FAQProps) => {
