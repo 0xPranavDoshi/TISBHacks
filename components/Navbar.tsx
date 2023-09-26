@@ -41,6 +41,26 @@ const Navbar = () => {
         <p
           onClick={async () => {
             router.pathname !== "/" && (await router.push("/"));
+            let element = document.getElementById("themes");
+            element?.scrollIntoView({ behavior: "smooth", block: "start" });
+          }}
+          className="hidden text-white cursor-pointer select-none sm:block"
+        >
+          Themes
+        </p>
+        <p
+          onClick={async () => {
+            router.pathname !== "/" && (await router.push("/"));
+            let element = document.getElementById("prizes");
+            element?.scrollIntoView({ behavior: "smooth", block: "start" });
+          }}
+          className="hidden text-white cursor-pointer select-none sm:block"
+        >
+          Prizes
+        </p>
+        <p
+          onClick={async () => {
+            router.pathname !== "/" && (await router.push("/"));
             let element = document.getElementById("faqs");
             element?.scrollIntoView({ behavior: "smooth", block: "start" });
           }}
@@ -58,21 +78,11 @@ const Navbar = () => {
         >
           Sponsors
         </p>
-        {/* <p
-          onClick={() => router.push('/blog')}
-          className='text-white cursor-pointer'
-        >
-          Blog
-        </p> */}
         <div
-          onClick={async () => {
-            router.pathname !== "/" && (await router.push("/"));
-            let element = document.getElementById("winners");
-            element?.scrollIntoView({ behavior: "smooth", block: "start" });
-          }}
+          onClick={() => {}}
           className="px-6 py-2 mr-8 rounded-full cursor-pointer sm:mr-12 bg-gradient-to-b from-gradientTop to-gradientBottom"
         >
-          View Winners
+          Registrations Opening Soon!
         </div>
       </div>
     </div>
