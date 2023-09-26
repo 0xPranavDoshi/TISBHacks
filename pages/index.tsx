@@ -178,7 +178,7 @@ export default function Home() {
         <div className="flex w-screen h-auto mt-16 bg-primary">
           {/* Create a section for the prizes, explaining the prize distribution for the main and mini events */}
           <div className="flex flex-col items-center justify-center w-full h-auto px-6 sm:px-8">
-            <h1 className="w-full mb-8 text-6xl font-semibold text-left">
+            <h1 className="w-full mb-8 text-6xl font-semibold text-center sm:text-left">
               Prizes
             </h1>
             <div className="flex flex-col sm:flex-row items-start justify-center w-full h-auto gap-4 mb-4 sm:flex-row">
@@ -219,7 +219,9 @@ export default function Home() {
         <div className="relative bottom-20" id="faqs"></div>
         <div className="flex items-start justify-between w-screen h-auto bg-primary mt-8">
           <div className="flex flex-col items-start justify-start p-8">
-            <h1 className="mb-8 text-6xl font-semibold">FAQs</h1>
+            <h1 className="mb-8 text-6xl w-full text-center sm:text-left font-semibold">
+              FAQs
+            </h1>
             {faqs.map((faqObj: FAQProps) => {
               return (
                 <FAQ
@@ -238,23 +240,23 @@ export default function Home() {
             </h3>
             <div className="flex flex-col items-start justify-start gap-8 ml-4 overflow-x-auto">
               <div className="flex items-start justify-start w-full gap-8">
-                <img src="/sponsors/cobalt.png" alt="" className="w-40" />
-                <img
-                  src="/sponsors/corporate gurukul.jpeg"
-                  alt=""
-                  className="w-40"
-                />
-                <img src="/sponsors/jetlearn.png" alt="" className="w-28" />
-                <img src="/sponsors/looria.svg" alt="" className="w-40" />
+                <div className="w-52 h-28 bg-gray rounded-lg flex justify-center items-center text-xl text-zinc-400">
+                  TBA
+                </div>
+                <div className="w-52 h-28 bg-gray rounded-lg flex justify-center items-center text-xl text-zinc-400">
+                  TBA
+                </div>
+                <div className="w-52 h-28 bg-gray rounded-lg flex justify-center items-center text-xl text-zinc-400">
+                  TBA
+                </div>
               </div>
               <div className="flex items-start justify-start w-full gap-8">
-                <img src="/sponsors/rotary.png" alt="" className="w-40" />
-                <img
-                  src="/sponsors/tribesForGood.jpeg"
-                  alt=""
-                  className="w-40"
-                />
-                <img src="/sponsors/vimochana.png" alt="" className="w-40" />
+                <div className="w-52 h-28 bg-gray rounded-lg flex justify-center items-center text-xl text-zinc-400">
+                  TBA
+                </div>{" "}
+                <div className="w-52 h-28 bg-gray rounded-lg flex justify-center items-center text-xl text-zinc-400">
+                  TBA
+                </div>
               </div>
             </div>
           </div>
